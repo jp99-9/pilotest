@@ -6,8 +6,8 @@ export default function Reaction() {
     const [difficulty, setDifficulty] = useState("");
 
     const testDetails = {
-        title: "Orientación espacial: Plegado de dados",
-        description: "En este test tendrás que identificar qué dado plegado corresponde con el patrón desplegado.",
+        title: "E-Test scan",
+        description: "En este test tendrás que saber que puntos de la imagen se encuentran en el mismo lugar.",
         duration: "2 minutos",
         questions: 10,
         instantFeedback: true,
