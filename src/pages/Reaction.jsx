@@ -1,11 +1,12 @@
 import { useState } from "react";
 import ReactionTest from "../tests/ReactionTest";
+import ETestScan from "../tests/E-testScan";
 
 export default function Reaction() {
     const [started, setStarted] = useState(false);
 
     if (started) {
-        return <ReactionTest />;
+        return <ETestScan />;
     }
 
     return (
