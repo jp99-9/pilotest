@@ -3,12 +3,13 @@ import Sidebar from "./components/Sidebar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Reaction from "./pages/Reaction";
+import Maths from "./pages/Maths";
+import QuickCalc from "./tests/maths/QuickCalc";
 
 // Simple placeholder components
 function Assignments() { return <div className="p-8">Assignments Page</div>; }
 function News() { return <div className="p-8">News Page</div>; }
 function Ask() { return <div className="p-8">Ask a Question Page</div>; }
-function MathsTest() { return <div className="p-8">Maths Test Page</div>; }
 function MemoryTest() { return <div className="p-8">Memory Test Page</div>; }
 
 export default function App() {
@@ -35,7 +36,9 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/tests/reaction" element={<Reaction />} />
-              <Route path="/tests/maths" element={<MathsTest />} />
+              <Route path="/tests/maths" element={<Maths />} />
+              <Route path="/tests/maths/quickcalc" element={<QuickCalc />} />
+              
               <Route path="/tests/memory" element={<MemoryTest />} />
               <Route path="/assignments" element={<Assignments />} />
               <Route path="/news" element={<News />} />
