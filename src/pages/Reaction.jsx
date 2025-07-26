@@ -1,4 +1,6 @@
 import { useState } from "react";
+import TestCard from "../components/TestCard";
+
 
 export default function Reaction() {
     const tests = [
@@ -26,64 +28,28 @@ export default function Reaction() {
             tags: [
                 { label: "Reflejos", color: "bg-yellow-100 text-yellow-700" },
             ],
-            image: "https://via.placeholder.com/150/FFFF00/000000?text=Reflejos",
+            image: "/public/images/imagenReactionTest.png",
         },
         // Puedes agregar más tests aquí
     ];
 
     function handleStart(test) {
-        alert(`Comenzando test: ${test.title}`);
-        // Aquí puedes navegar o mostrar el test real
+    // Navega a la página del test E-Test scan usando react-router
+    if (test.id === 1) {
+        window.location.href = "/tests/reaction/eTestScan";
+        return;
+    }
+    if(test.id === 2) {
+        window.location.href = "/tests/reaction/reactionTest";
+        return;
+    }
     }
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-purple-100 to-blue-100 p-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-[#A7C7E7] via-[#F5F7FA] to-[#FFF9C4] p-4">
+            <div className="flex flex-col items-center w-full max-w-4xl space-y-8">
                 {tests.map((test) => (
-                    <div key={test.id} className="bg-white rounded-lg shadow p-4 flex flex-col md:flex-row gap-4 w-full">
-                        <div className="flex-1 min-w-[120px] max-w-[180px] flex items-center justify-center">
-                            <img
-                                src={test.image}
-                                alt="Lesson"
-                                className="rounded-lg w-full object-cover max-h-32"
-                            />
-                        </div>
-                        <div className="flex-1 flex flex-col justify-center">
-                            <div className="flex flex-wrap gap-2 mb-2">
-                                {test.tags.map((tag, idx) => (
-                                    <span key={idx} className={`${tag.color} px-2 py-0.5 rounded-full text-xs font-semibold`}>{tag.label}</span>
-                                ))}
-                            </div>
-                            <h1 className="text-lg md:text-xl font-extrabold mb-1 text-gray-800">
-                                {test.title}
-                            </h1>
-                            <p className="text-gray-600 mb-3 text-sm md:text-base">
-                                {test.description}
-                            </p>
-                            <ul className="mb-4 space-y-2 text-gray-700 text-sm">
-                                <li className="flex items-center gap-2">
-                                    <span className="inline-block w-2 h-2 bg-purple-400 rounded-full"></span>
-                                    <span>Duración: <span className="font-semibold">{test.duration}</span></span>
-                                </li>
-                                <li className="flex items-center gap-2">
-                                    <span className="inline-block w-2 h-2 bg-blue-400 rounded-full"></span>
-                                    <span>Número de preguntas: <span className="font-semibold">{test.questions}</span></span>
-                                </li>
-                                {test.instantFeedback && (
-                                    <li className="flex items-center gap-2">
-                                        <span className="inline-block w-2 h-2 bg-green-400 rounded-full"></span>
-                                        <span>Respuestas automáticas al instante</span>
-                                    </li>
-                                )}
-                            </ul>
-                            <button
-                                onClick={() => handleStart(test)}
-                                className="mt-2 px-6 py-3 bg-purple-500 text-white rounded-lg text-lg font-semibold shadow hover:bg-purple-600 transition self-center"
-                            >
-                                ▶️ Comenzar
-                            </button>
-                        </div>
-                    </div>
+                    <TestCard key={test.id} test={test} onStart={handleStart} />
                 ))}
             </div>
         </div>

@@ -44,20 +44,22 @@ export default function Sidebar() {
         collapsed ? "w-20" : "w-64"
       }`}
     >
-      {/* Logo and collapse button */}
-      <div className="flex items-center justify-between p-4 border-b">
-        <span className={`text-2xl font-serif font-bold text-black`}>
-          <span className="text-purple-400">P</span>
-          {!collapsed && "ilotTests"}
+      {/* Logo and collapse button with sun effect */}
+      <div className="flex items-center justify-between p-4 border-b bg-transparent relative">
+        <span className={`text-2xl font-serif font-bold text-[#222] flex items-center gap-2`}>
+          <span className="w-8 h-8 rounded-full bg-[#FFD600] shadow-inner border-2 border-[#F5F7FA] flex items-center justify-center">
+            <span className="text-yellow-400 text-2xl">☀️</span>
+          </span>
+          {!collapsed && <span className="ml-1">PilotTests</span>}
         </span>
         <button
-          className="p-1 rounded hover:bg-gray-100"
+          className="p-1 rounded hover:bg-[#e3f0fa]"
           onClick={() => setCollapsed((c) => !c)}
         >
           {collapsed ? (
-            <ChevronRightIcon className="h-6 w-6 text-purple-400" />
+            <ChevronRightIcon className="h-6 w-6 text-[#3498db]" />
           ) : (
-            <ChevronLeftIcon className="h-6 w-6 text-purple-400" />
+            <ChevronLeftIcon className="h-6 w-6 text-[#3498db]" />
           )}
         </button>
       </div>
@@ -71,15 +73,15 @@ export default function Sidebar() {
                 <button
                   onClick={() => setTestsOpen((open) => !open)}
                   className={`w-full flex items-center gap-4 px-4 py-3 transition focus:outline-none
-                    ${isActive ? "bg-purple-100 text-purple-700 font-semibold" : "text-gray-700 hover:bg-purple-50"}
+                    ${isActive ? "bg-[#e3f0fa] text-[#222] font-semibold" : "text-[#222] hover:bg-[#e3f0fa]"}
                   `}
                 >
-                  <item.icon className="h-6 w-6 text-purple-400" />
+                  <item.icon className="h-6 w-6 text-[#3498db]" />
                   {!collapsed && <span className="font-medium flex-1 text-left">{item.name}</span>}
                   {!collapsed && (testsOpen ? (
-                    <ChevronUpIcon className="h-4 w-4 text-purple-400" />
+                    <ChevronUpIcon className="h-4 w-4 text-[#3498db]" />
                   ) : (
-                    <ChevronDownIcon className="h-4 w-4 text-purple-400" />
+                    <ChevronDownIcon className="h-4 w-4 text-[#3498db]" />
                   ))}
                 </button>
                 {/* Dropdown */}
@@ -92,7 +94,7 @@ export default function Sidebar() {
                           key={child.name}
                           to={child.path}
                           className={`block px-2 py-2 rounded transition text-sm
-                            ${isChild ? "bg-purple-200 text-purple-900 font-semibold" : "text-gray-600 hover:bg-purple-50"}
+                            ${isChild ? "bg-[#3498db] text-white font-semibold" : "text-[#222] hover:bg-[#e3f0fa]"}
                           `}
                         >
                           {child.name}
@@ -109,10 +111,10 @@ export default function Sidebar() {
               key={item.name}
               to={item.path}
               className={`flex items-center gap-4 px-4 py-3 transition
-                ${isActive ? "bg-purple-100 text-purple-700 font-semibold" : "text-gray-700 hover:bg-purple-50"}
+                ${isActive ? "bg-[#e3f0fa] text-[#222] font-semibold" : "text-[#222] hover:bg-[#e3f0fa]"}
               `}
             >
-              <item.icon className="h-6 w-6 text-purple-400" />
+              <item.icon className="h-6 w-6 text-[#3498db]" />
               {!collapsed && <span className="font-medium">{item.name}</span>}
             </Link>
           );
