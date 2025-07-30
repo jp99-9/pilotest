@@ -28,7 +28,7 @@ export default function Reaction() {
             tags: [
                 { label: "Reflejos", color: "bg-yellow-100 text-yellow-700" },
             ],
-            image: "/public/images/imagenReactionTest.png",
+            image: "/images/imagenReactionTest.png",
         },
         // Puedes agregar más tests aquí
     ];
@@ -40,7 +40,7 @@ export default function Reaction() {
         return;
     }
     if(test.id === 2) {
-        window.location.href = "/tests/reaction/reactionTest";
+        window.location.href = "/tests/test";
         return;
     }
     }

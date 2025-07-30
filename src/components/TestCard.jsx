@@ -36,7 +36,7 @@ const TestCard = ({ test, onStart }) => (
         </ul>
       </div>
       <button
-        onClick={() => onStart(test)}
+        onClick={() => onStart(test.id)}
         className="w-full mt-2 px-8 py-4 bg-[#3498db] text-white rounded-xl text-xl font-bold shadow hover:bg-[#217dbb] transition"
       >
         ▶️ Comenzar
