@@ -5,9 +5,10 @@ import Home from "./pages/Home";
 import Reaction from "./pages/Reaction";
 import Maths from "./pages/Maths";
 import QuickCalc from "./tests/maths/QuickCalc";
-import ETestScan from "./tests/reaction/E-testScan";
+import ETestScan from "./tests/reaction/ETestScan";
 import ReactionTest from "./tests/reaction/ReactionTest";
 import { TestPage } from "./pages/TestPage";
+import QuickMatch from "./tests/reaction/QuickMatch";
 
 // Simple placeholder components
 function Assignments() { return <div className="p-8">Assignments Page</div>; }
@@ -43,6 +44,7 @@ export default function App() {
               <Route path="/tests/maths/quickcalc" element={<QuickCalc />} />
               <Route path="/tests/reaction/eTestScan" element={<ETestScan />} />
               <Route path="/tests/reaction/ReactionTest" element={<ReactionTest />} />
+              <Route path="/tests/reaction/QuickMatch" element={<QuickMatch />} />
               <Route path="/test/:id" element={<TestPage />} />
               <Route path="/tests/memory" element={<MemoryTest />} />
               <Route path="/assignments" element={<Assignments />} />
